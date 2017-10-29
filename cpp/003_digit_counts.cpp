@@ -1,6 +1,6 @@
 // Time:  O(logn) = O(1)
 // Space: O(1)
-
+// 此解法尚未测试
 class Solution {
 public:
     /*
@@ -50,11 +50,14 @@ public:
         int cnt = 0;
         for (int i = 0; i <= n; ++i) {
             int num = i;
-            while (num > 0) {
+            while (num >= 10) {
                 if (num % 10 == k) {
                     ++cnt;
                 }
                 num /= 10;
+            }
+            if (num == k) {
+                ++cnt;
             }
         }
         return cnt;
