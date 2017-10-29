@@ -6,11 +6,11 @@ public:
     // param n : description of n
     // return: description of return
     long long trailingZeros(long long n) {
-        long long zero_num = 0;
+        long long zeroCount = 0;
         while (n > 0) {
             n /= 5;
-            zero_num += n;
+            zeroCount += n;
         }
-        return zero_num;
+        return zeroCount;
     }
 };
