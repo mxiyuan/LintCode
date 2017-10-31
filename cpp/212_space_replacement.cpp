@@ -15,8 +15,8 @@ public:
             }
         }
 
-        const int new_length = length + (static_cast<int>(to.size()) - 1) * spaceCount;
-        for (int i = length - 1, j = new_length - 1; i >= 0; --i) {
+        const int newLength = length + (static_cast<int>(to.size()) - 1) * spaceCount;
+        for (int i = length - 1, j = newLength - 1; i >= 0; --i) {
             if (str[i] == ' ') {
                 int k = to.size() - 1;
                 while(k >= 0) {
@@ -27,6 +27,6 @@ public:
             }
         }
         
-        return new_length;
+        return newLength;
     }
 };
