@@ -11,30 +11,35 @@
  * }
  */
 
-
-class Solution {
-public:
+class Solution
+{
+  public:
     /*
      * @param l1: ListNode l1 is the head of the linked list
      * @param l2: ListNode l2 is the head of the linked list
      * @return: ListNode head of linked list
      */
-    ListNode * mergeTwoLists(ListNode * l1, ListNode * l2) {
+    ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
+    {
         // write your code here
         ListNode dummy(0);
         auto curr = &dummy;
-        
-        while(l1 && l2) {
-            if(l1 -> val < l2 -> val) {
-                curr -> next = l1;
-                l1 = l1 -> next;
-            } else {
-                curr -> next = l2;
-                l2 = l2 -> next;
+
+        while (l1 && l2)
+        {
+            if (l1->val < l2->val)
+            {
+                curr->next = l1;
+                l1 = l1->next;
             }
-            curr = curr -> next;
+            else
+            {
+                curr->next = l2;
+                l2 = l2->next;
+            }
+            curr = curr->next;
         }
-        curr -> next = l1 ? l1 : l2;
+        curr->next = l1 ? l1 : l2;
 
         return dummy.next;
     }
