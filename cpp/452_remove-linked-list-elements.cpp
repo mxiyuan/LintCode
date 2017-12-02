@@ -9,23 +9,29 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
-public:
+class Solution
+{
+  public:
     /**
      * @param head a ListNode
      * @param val an integer
      * @return a ListNode
      */
-    ListNode *removeElements(ListNode *head, int val) {
+    ListNode *removeElements(ListNode *head, int val)
+    {
         ListNode dummy{0};
         dummy.next = head;
         auto prev = &dummy, curr = dummy.next;
-        
-        while (curr) {
-            if (curr->val == val) {
+
+        while (curr)
+        {
+            if (curr->val == val)
+            {
                 prev->next = curr->next;
                 delete curr;
-            } else {
+            }
+            else
+            {
                 prev = curr;
             }
             curr = curr->next;

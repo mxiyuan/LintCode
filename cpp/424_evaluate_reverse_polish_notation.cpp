@@ -1,14 +1,17 @@
 // Time:  O(n)
 // Space: O(n)
 
-class Solution {
-public:
+class Solution
+{
+  public:
     /*
      * @param tokens: The Reverse Polish Notation
      * @return: the value
      */
-    int evalRPN(vector<string> tokens) {
-        if (tokens.empty()) {
+    int evalRPN(vector<string> tokens)
+    {
+        if (tokens.empty())
+        {
             return 0;
         }
         stack<int> s;
@@ -17,21 +20,32 @@ public:
             return op.length() == 1 && string("+-*/").find(op) != string::npos;
         };
 
-        for (const auto& tok : tokens) {
-            if (!is_operator(tok)) {
+        for (const auto &tok : tokens)
+        {
+            if (!is_operator(tok))
+            {
                 s.emplace(stoi(tok));
-            } else {
+            }
+            else
+            {
                 int y = s.top();
                 s.pop();
                 int x = s.top();
                 s.pop();
-                if (tok[0] == '+') {
+                if (tok[0] == '+')
+                {
                     x += y;
-                } else if (tok[0] == '-') {
+                }
+                else if (tok[0] == '-')
+                {
                     x -= y;
-                } else if (tok[0] == '*') {
+                }
+                else if (tok[0] == '*')
+                {
                     x *= y;
-                } else {
+                }
+                else
+                {
                     x /= y;
                 }
                 s.emplace(x);
