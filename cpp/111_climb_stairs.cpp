@@ -8,7 +8,10 @@ class Solution
     int climbStairs(int n)
     {
         if (n < 1)
+        {
             return 0;
+        }
+
         array<int, 3> steps{1, 1, 2};
         for (int i = 2; i <= n; ++i)
         {
