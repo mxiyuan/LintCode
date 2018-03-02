@@ -12,17 +12,14 @@ public class Solution {
     
     private String getString(String inputStream) {
         StringBuilder str = new StringBuilder();
-        int count = 0;
         for(char c : inputStream.toCharArray()) {
             if(c == '<') {
-                if(count > 0) {
-                    str.deleteCharAt(count - 1);
-                    count--;
+                if(str.length() > 0) {
+                    str.deleteCharAt(str.length() - 1);
                 }
             }
             else {
                 str.append(c);
-                count++;
             }
         }
         return str.toString();
