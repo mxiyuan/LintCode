@@ -12,7 +12,6 @@ public:
      * @return: nothing
      */
     void push(int number) {
-        // write your code here
         if (elements_.empty()) {
             elements_.emplace(0);
             stack_min_ = number;

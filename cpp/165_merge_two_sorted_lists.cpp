@@ -21,7 +21,6 @@ class Solution
      */
     ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
     {
-        // write your code here
         ListNode dummy(0);
         auto curr = &dummy;
 

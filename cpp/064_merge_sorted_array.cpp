@@ -1,4 +1,4 @@
-class Solution
+class Solution 
 {
   public:
     /*
@@ -10,7 +10,6 @@ class Solution
      */
     void mergeSortedArray(int A[], int m, int B[], int n)
     {
-        // write your code here
         int i = m - 1;
         int j = n - 1;
         int k = m + n - 1;
