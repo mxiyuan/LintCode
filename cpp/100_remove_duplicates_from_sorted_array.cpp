@@ -11,18 +11,15 @@ public:
         if (nums.empty()) {
             return 0;
         }
-
-        int left = 0;
-        int right = 1;
-
-        while (right < nums.size()) {
-            if (nums[left] != nums[right]) {
-                ++left;
-                nums[left] = nums[right];
+        auto slow = nums.begin();
+        auto fast = slow + 1;
+        while (fast != nums.end()) {
+            if (*fast != *slow) {
+                *(++slow) = *fast;
             }
-            ++right;
+            ++fast;
         }
-
-        return left + 1;
+        nums.resize(slow - nums.begin() + 1);
+        return nums.size();
     }
 };
