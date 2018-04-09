@@ -1,11 +1,9 @@
-class Solution
-{
-  public:
+class Solution {
+public:
     /**
      * @return: The same instance of this class every time
      */
-    static Solution *getInstance()
-    {
+    static Solution *getInstance() {
         static Solution *instance = new Solution();
         return instance;
     }
@@ -13,7 +11,7 @@ class Solution
     Solution(const Solution &) = delete;
     Solution &operator=(const Solution &) = delete;
 
-  private:
+private:
     Solution() {}
     ~Solution() {}
 };
