@@ -1,19 +1,15 @@
 // Time:  O(n)
 // Space: O(1)
 
-class Solution
-{
+class Solution {
   public:
     /**
      * param n: As description.
      * return: A list of strings.
      */
-    vector<string> fizzBuzz(int n)
-    {
+    vector<string> fizzBuzz(int n) {
         vector<string> result;
-
-        for (int i = 1; i <= n; ++i)
-        {
+        for (int i = 1; i <= n; ++i) {
             if (i % 15 == 0)
             {
                 result.emplace_back("fizz buzz");
